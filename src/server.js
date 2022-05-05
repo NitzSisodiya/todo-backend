@@ -3,6 +3,7 @@ require("./connection");
 
 const dotenv = require("dotenv");
 dotenv.config();
+const host = "0.0.0.0";
 const port = process.env.PORT || 8000;
 
 const routers = require("./routers");
@@ -14,6 +15,6 @@ app.use(express.json());
 app.use(cors());
 app.use(routers);
 
-app.listen(port, () => {
+app.listen(port, host,() => {
   console.log(`Server is created ${port}`);
 });
