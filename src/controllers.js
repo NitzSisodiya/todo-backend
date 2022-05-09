@@ -66,7 +66,7 @@ exports.uploadProfile = async (req, res) => {
   }
 };
 
-exports.fetchToDOList = async (req, res) => {
+exports.fetchToDOList = async (req, res) => {console.log("fetch");
   try {
     const todo_list = await toDoList.find({ userId: req.params.userId });
     res.send(todo_list).status(200);
